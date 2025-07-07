@@ -7,29 +7,96 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container-nav">
+    <span class="logo"> AutoFix</span>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#formulario">Solicitar</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
-  <h1>AutoFix - Reparación de Vehículos a Domicilio</h1>
+  <div class="card-seccion">
+    <h1>AutoFix - Reparación de Vehículos a Domicilio</h1>
 
-  <section class="servicios">
-    <h2>Servicios y Precios</h2>
-    <div class="tarjetas-servicio">
-      <div class="servicio">
-        <img src="assets/img/aceite.png" alt="Cambio de aceite">
-        <h3>Cambio de aceite</h3>
-        <p>Precio: $5000 CLP</p>
+    <section class="servicios" id="servicios">
+      <h2>Servicios y Precios</h2>
+      <div class="tarjetas-servicio">
+        <div class="servicio">
+          <img src="assets/img/aceite.png" alt="Cambio de aceite">
+          <h3>Cambio de aceite</h3>
+          <p>Precio: $5000 CLP</p>
+          <button class="ver-mas" onclick="abrirModal('aceite')">Ver más</button>
+        </div>
+        <div class="servicio">
+          <img src="assets/img/frenos.png" alt="Revisión de frenos">
+          <h3>Revisión de frenos</h3>
+          <p>Precio: $7000 CLP</p>
+          <button class="ver-mas" onclick="abrirModal('frenos')">Ver más</button>
+        </div>
+        <div class="servicio">
+          <img src="assets/img/diagnostico.png" alt="Diagnóstico eléctrico">
+          <h3>Diagnóstico eléctrico</h3>
+          <p>Precio: $6000 CLP</p>
+          <button class="ver-mas" onclick="abrirModal('diagnostico')">Ver más</button>
+        </div>
       </div>
-      <div class="servicio">
-        <img src="assets/img/frenos.png" alt="Revisión de frenos">
-        <h3>Revisión de frenos</h3>
-        <p>Precio: $7000 CLP</p>
-      </div>
-      <div class="servicio">
-        <img src="assets/img/diagnostico.png" alt="Diagnóstico eléctrico">
-        <h3>Diagnóstico eléctrico</h3>
-        <p>Precio: $6000 CLP</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
+
+<section class="formulario">
+  <h2>Solicitar Reparación</h2>
+  <p class="intro-formulario">
+    ¿Tu vehículo necesita atención? Completa el siguiente formulario para agendar una reparación a domicilio. ¡Nos encargamos del resto!
+  </p>
+  <form id="formulario-reparacion">
+    <label for="nombre">Nombre del Cliente</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="servicio">Tipo de Reparación</label>
+    <select id="servicio" name="servicio" required>
+      <option value="">Selecciona un servicio</option>
+      <option value="aceite">Cambio de aceite</option>
+      <option value="frenos">Revisión de frenos</option>
+      <option value="diagnostico">Diagnóstico eléctrico</option>
+    </select>
+
+    <label for="descripcion">Descripción</label>
+    <textarea id="descripcion" name="descripcion" rows="4" placeholder="Describe el problema del vehículo..."></textarea>
+
+    <label for="fecha">Agendar Cita</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <h3>Información de Pago (simulado)</h3>
+
+    <label for="tarjeta">Número de tarjeta</label>
+    <input type="text" id="tarjeta" name="tarjeta" placeholder="**** **** **** 1234" required>
+
+    <label for="titular">Nombre del titular</label>
+    <input type="text" id="titular" name="titular" required>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" name="cvv" maxlength="3" required>
+
+    <button type="submit">Confirmar Solicitud</button>
+  </form>
+</section>
+
+<!-- Modal -->
+<div id="modal-servicio" class="modal hidden">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <h3 id="modal-titulo"></h3>
+    <p id="modal-descripcion"></p>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 AutoFix. Todos los derechos reservados.</p>
+</footer>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

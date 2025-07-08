@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AutoFix - Reparación de Vehículos a Domicilio</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 <!-- Navbar -->
@@ -17,26 +18,26 @@
     </ul>
   </div>
 </nav>
+<!-- Servicios -->
 <div class="container">
-  <div class="card-seccion">
-    <h1>AutoFix - Reparación de Vehículos a Domicilio</h1>
-
+  <h1>AutoFix - Reparación de Vehículos a Domicilio</h1>
+  <div class="card-seccion" data-aos="fade-up">
     <section class="servicios" id="servicios">
-      <h2>Servicios y Precios</h2>
+      <h2 data-aos="fade-right">Servicios y Precios</h2>
       <div class="tarjetas-servicio">
-        <div class="servicio">
+        <div class="servicio" data-aos="zoom-in" data-aos-delay="100">
           <img src="assets/img/aceite.png" alt="Cambio de aceite">
           <h3>Cambio de aceite</h3>
           <p>Precio: $5000 CLP</p>
           <button class="ver-mas" onclick="abrirModal('aceite')">Ver más</button>
         </div>
-        <div class="servicio">
+        <div class="servicio" data-aos="zoom-in" data-aos-delay="200">
           <img src="assets/img/frenos.png" alt="Revisión de frenos">
           <h3>Revisión de frenos</h3>
           <p>Precio: $7000 CLP</p>
           <button class="ver-mas" onclick="abrirModal('frenos')">Ver más</button>
         </div>
-        <div class="servicio">
+        <div class="servicio" data-aos="zoom-in" data-aos-delay="300">
           <img src="assets/img/diagnostico.png" alt="Diagnóstico eléctrico">
           <h3>Diagnóstico eléctrico</h3>
           <p>Precio: $6000 CLP</p>
@@ -47,7 +48,8 @@
   </div>
 </div>
 
-<section class="formulario">
+<!-- Formulario -->
+<section class="formulario" id="formulario" data-aos="fade-up" data-aos-delay="200">
   <h2>Solicitar Reparación</h2>
   <p class="intro-formulario">
     ¿Tu vehículo necesita atención? Completa el siguiente formulario para agendar una reparación a domicilio. ¡Nos encargamos del resto!
@@ -84,7 +86,6 @@
     <button type="submit">Confirmar Solicitud</button>
   </form>
 </section>
-
 <!-- Modal -->
 <div id="modal-servicio" class="modal hidden">
   <div class="modal-contenido">
@@ -93,10 +94,23 @@
     <p id="modal-descripcion"></p>
   </div>
 </div>
+<!-- Modal de Confirmación o Error -->
+<div id="modal-mensaje" class="modal hidden">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarMensaje()">&times;</span>
+    <h3 id="modal-mensaje-titulo"></h3>
+    <p id="modal-mensaje-texto"></p>
+  </div>
+</div>
 <!-- Footer -->
 <footer class="footer">
   <p>&copy; 2025 AutoFix. Todos los derechos reservados.</p>
+  <p>Hecho por Magdalena Inalaf G.</p>
 </footer>
 <script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

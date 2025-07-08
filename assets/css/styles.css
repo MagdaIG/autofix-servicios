@@ -5,6 +5,9 @@
   padding: 0;
   font-family: Arial, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: #111111;
@@ -171,7 +174,7 @@ h3 {
   display: block;
   margin: 12px 0 6px;
   font-weight: bold;
-  color: #ccc;
+  color: #ffffff;
 }
 
 .formulario input,
@@ -249,6 +252,13 @@ h3 {
 .hidden {
   display: none;
 }
+#modal-mensaje-titulo {
+  color: #00d1b2;
+}
+
+.modal-contenido p {
+  white-space: pre-line;
+}
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -267,4 +277,43 @@ h3 {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .container-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tarjetas-servicio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .servicio {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .card-seccion,
+  .formulario {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .formulario input,
+  .formulario select,
+  .formulario textarea {
+    font-size: 1rem;
+  }
+
+  .formulario button {
+    font-size: 1rem;
+  }
 }
